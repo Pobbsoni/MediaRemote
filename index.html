@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#111318" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Media Remote</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header><div><p class="eyebrow">MEDIA REMOTE</p><h1>Din dator</h1></div><button id="connection" class="connection" type="button" aria-label="Anslut till datorn"><span></span><b>Ansluter…</b></button></header>
+      <section class="touchpad-card" aria-label="Touchpad">
+        <div id="touchpad" class="touchpad" tabindex="0"><span>Touchpad</span></div>
+        <div class="mouse-buttons"><button data-click="left">Klick</button><button data-click="right">Högerklick</button></div>
+      </section>
+      <section class="controls" aria-label="Mediekontroller">
+        <button class="round" data-media="previous" aria-label="Föregående">◀◀</button><button id="play" class="round primary" data-media="playPause" aria-label="Spela eller pausa">▶</button><button class="round" data-media="next" aria-label="Nästa">▶▶</button>
+      </section>
+      <section class="audio-card"><div class="row"><span class="volume-icon">◖</span><input id="volume" type="range" min="0" max="100" value="50" aria-label="Volym" /><output id="volume-value">50%</output></div><div class="actions"><button id="mute" class="action">🔊 <span>Ljud på</span></button><button id="fullscreen" class="action">⛶ <span>Helskärm</span></button></div></section>
+      <p id="hint" class="hint">Ställ in datorns adress för att ansluta.</p>
+    </main>
+    <dialog id="settings"><form method="dialog"><h2>Anslut till datorn</h2><p>På samma Wi‑Fi: skriv datorns lokala IP-adress.</p><label>Serveradress<input id="server-url" type="url" inputmode="url" placeholder="ws://192.168.1.42:8765" required /></label><small>Öppnar du appen från GitHub Pages behövs en säker <code>wss://</code>-adress.</small><menu><button value="cancel">Avbryt</button><button id="save-server" value="default">Spara</button></menu></form></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
